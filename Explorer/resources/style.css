@@ -1,0 +1,18 @@
+.search-highlight {
+    background-color: yellow;
+    /* You can adjust the highlight color */
+}
+
+#treecolumn-1011-titleEl {
+    background-color: rgb(114, 114, 114);
+    color: white;
+}
+
+#treecolumn-1011-innerCt {
+    background-color: bisque;
+    padding: 10px;
+}
+
+#panel-1016-innerCt {
+    background-color: #157fcc;
+}

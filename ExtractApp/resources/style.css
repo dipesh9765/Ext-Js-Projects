@@ -1,0 +1,28 @@
+.x-btn {
+    width: 130px;
+    margin: 10px 50px 10px 10px;
+    padding: 5px;
+}
+
+.display-item {
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.diff-line {
+    display: block;
+    border-bottom: 1px dashed #000;
+    margin-bottom: 10px;
+}
+
+.x-grid-item {
+    padding: 5px;
+}
+
+.x-autocontainer-innerCt {
+    padding: 10px;
+}
+
+#mainView_header-title-textEl {
+    font-size: x-large;
+}
