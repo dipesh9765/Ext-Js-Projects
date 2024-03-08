@@ -16,16 +16,25 @@ Ext.define('ExtractApp.view.main.MainController', {
      * and generates formatted data for display in a grid.
      */
     GetPastedCode: function () {
-        let LGridPreview = this.lookupReference("id-gridview");
-        if (LGridPreview) return;
+        // let LGridPreview = this.lookupReference("id-gridview");
+        // if (LGridPreview) return;
+        navigator.clipboard.read().then(items => {
+            items[0].getType("text/html").then(blob => {
+                blob.text().then(text => {
+                    console.log(text);
+                    document.write(text)
+                });
+            });
+        });
 
-        navigator.clipboard.readText().then(p_strClipText => {
-            let LSplitters = ["paragraph", "division", "bullet", "html"];
-            const GDataArray = ExtractApp.view.main.Utility.SplitData.SplitDataUsingInputFormatters(p_strClipText, LSplitters);
-            let LStoreData = this.pvtMakeDataForStore(GDataArray);
 
-            this.pvtGenerateGrid(LStoreData);
-        }).catch(err => console.error(err))
+        // navigator.clipboard.readText().then(p_strClipText => {
+        //     let LSplitters = ["paragraph", "division", "bullet", "html"];
+        //     const GDataArray = ExtractApp.view.main.Utility.SplitData.SplitDataUsingInputFormatters(p_strClipText, LSplitters);
+        //     let LStoreData = this.pvtMakeDataForStore(GDataArray);
+
+        //     this.pvtGenerateGrid(LStoreData);
+        // }).catch(err => console.error(err))
     },
 
     /**

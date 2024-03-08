@@ -331,7 +331,7 @@ Ext.define('StudentRegistration.view.main.StudentName', {
         handler: function () {
             var form = this.up('form');
             Ext.Msg.alert('Success', "Want to Clear the Form");
-            form.getForm().reset()
+            form.getForm().reset();
         }
 
     }, {
@@ -343,7 +343,17 @@ Ext.define('StudentRegistration.view.main.StudentName', {
             if (form.isValid()) {
                 form.submit({
                     success: function (form, action) {
-                        Ext.Msg.alert('Success', action.result.msg);
+                        Ext.create('Ext.window.Window', {
+                            title: 'Extracted Data',
+                            alwaysOnTop: true,
+                            modal: true,
+                            layout: 'fit',
+                            items: [{
+                                xtype: 'panel',
+                                value: 'Hello World'
+
+                            }]
+                        }).show()
                     },
                     failure: function (form, action) {
                         Ext.Msg.alert('Failed', action.result.msg);
